@@ -1,0 +1,115 @@
+{% load static %}
+<header class="main-header_area-2">
+  <div class="header-middle_area">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="header-middle_nav">
+            <div class="header-logo_area">
+                <a href="/">
+                  <h4 class="m-0">
+                    {{ config.LOGO_TEXT }}
+                  </h4>
+
+                </a>
+            </div>
+            <div class="header-contact d-none d-md-flex">
+                <i class="fa fa-headphones-alt"></i>
+                <div class="contact-content">
+                    <p>
+                      Служба поддержки
+                      <br>
+                      {{ config.CONTACT_PHONE }}
+                    </p>
+                </div>
+            </div>
+
+            <div class="header-right_area d-none d-lg-inline-block">
+              <ul>
+                <li class="minicart-wrap">
+                  <a class="minicart-btn  toolbar-btn">
+                    <div class="minicart-count_area">
+                      <span class="item-count cart-count">00</span>
+                      <i class="ion-bag"></i>
+                    </div>
+                    <div class="minicart-front_text">
+                      <span class="total-price">0.0</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="header-right_area header-right_area-2 d-inline-block d-lg-none">
+                <ul>
+                    <li class="minicart-wrap">
+                        <a class="minicart-btn toolbar-btn">
+                            <div class="minicart-count_area">
+                                <span class="item-count cart-count">00</span>
+                                <i class="ion-bag"></i>
+                            </div>
+                            <div class="minicart-front_text">
+                              <span class="total-price">0.0</span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#offcanvasMenu" class="menu-btn toolbar-btn color--white d-none d-lg-block">
+                            <i class="ion-android-menu"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="sticky-header_nav position-relative">
+                        <div class="row align-items-center justify-content-between">
+                            <div class="col-lg-2 col-sm-6">
+                                <div class="header-logo_area">
+                                    <a href="/">
+                                      <h4 class="my-4">
+                                        {{config.LOGO_TEXT}}
+                                      </h4>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-7 d-none d-lg-block position-static">
+
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="header-right_area header-right_area-2">
+                                    <ul>
+                                        <li class="minicart-wrap">
+                                            <a class="minicart-btn toolbar-btn">
+                                              <div class="minicart-count_area">
+                                                <span class="item-count cart-count">00</span>
+                                                <i class="ion-bag"></i>
+                                              </div>
+                                              <div class="minicart-front_text">
+                                                <span class="total-price">0.0</span>
+                                              </div>
+                                            </a>
+                                        </li>
+
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="global-overlay"></div>
+</header>

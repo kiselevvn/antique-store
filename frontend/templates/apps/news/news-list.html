@@ -1,0 +1,69 @@
+{% extends "layouts/page-layout.html" %}
+{% load static %}
+
+{% block content  %}
+
+  <section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+      <ol>
+        <li><a href="index.html">Главная</a></li>
+        <li>Новости</li>
+      </ol>
+      <h2>Новости</h2>
+    </div>
+  </section>
+
+  <section id="blog" class="blog">
+    <div class="container">
+      <div class="row">
+        {% for object in page_obj %}
+          <div class="col-lg-4  col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+            <article class="entry">
+              <div class="entry-img">
+                {% if object.picture %}
+                    <img src="{{ object.picture.url }}" alt="" class="img-fluid">
+                  {% else %}
+                    <img src="{% static '/img/blog-5.jpg' %%}" alt="" class="img-fluid">
+                  {% endif %}
+              </div>
+              <h2 class="entry-title">
+                <a href="blog-single.html">{{ object.title }}</a>
+              </h2>
+              <div class="entry-meta">
+                <ul>
+                  <li class="d-flex align-items-center">
+                    <i class="icofont-wall-clock"></i> <a href="blog-single.html"><time datetime="{{ object.date_created|date:'y-m-d' }}">{{ object.date_created|date:"d F Y" }}</time></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="entry-content">
+                <p>
+                  {{ object.description }}
+                </p>
+                <div class="read-more">
+                  <a href="{% url 'news-detail' object.pk %}">Подробнее</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        {% empty %}
+          Нет новостей
+        {% endfor %}
+
+      </div>
+
+      <div class="blog-pagination" data-aos="fade-up">
+        <ul class="justify-content-center">
+          {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}"><i class="icofont-rounded-left"></i></a></li>
+          {% endif %}
+          {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}"><i class="icofont-rounded-right"></i></a></li>
+          {% endif %}
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+{% endblock %}

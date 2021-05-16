@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="{% static 'css/vendor/bootstrap.min.css'%}">
+  <!-- Fontawesome -->
+  <link rel="stylesheet" href="{% static 'css/vendor/font-awesome.min.css'%}">
+  <!-- Fontawesome Star -->
+  <link rel="stylesheet" href="{% static 'css/vendor/fontawesome-stars.min.css'%}">
+  <!-- Ion Icon -->
+  <link rel="stylesheet" href="{% static 'css/vendor/ion-fonts.css'%}">
+  <!-- Slick CSS -->
+  <link rel="stylesheet" href="{% static 'css/plugins/slick.css'%}">
+  <!-- Animation -->
+  <link rel="stylesheet" href="{% static 'css/plugins/animate.css'%}">
+  <!-- jQuery Ui -->
+  <link rel="stylesheet" href="{% static 'css/plugins/jquery-ui.min.css'%}">
+  <!-- Nice Select -->
+  <link rel="stylesheet" href="{% static 'css/plugins/nice-select.css'%}">
+  <!-- Timecircles -->
+  <link rel="stylesheet" href="{% static 'css/plugins/timecircles.css'%}">
+  <link rel="stylesheet" href="{% static 'css/style.min.css'%}">
+
+  <title>{% block title %}{{ config.SITE_NAME }}{% endblock %}</title>
+</head>
+<body class="template-color-1">
+  <div class="main-wrapper">
+    {% include 'components/loading.html' %}
+    {% comment %} {% include 'components/header.html' %} {% endcomment %}
+    {% block body %}
+      Use body django block
+    {% endblock %}
+    {% comment %} {% include 'components/footer.html' %} {% endcomment %}
+    <!-- jQuery JS -->
+    <script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
+    <!-- Modernizer JS -->
+    <script src="{% static 'js/vendor/modernizr-2.8.3.min.js' %}"></script>
+    <!-- Popper JS -->
+    <script src="{% static 'js/vendor/popper.min.js' %}"></script>
+    <!-- Bootstrap JS -->
+    <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+    <!-- Slick Slider JS -->
+    <script src="{% static 'js/plugins/slick.min.js' %}"></script>
+    <!-- Barrating JS -->
+    <script src="{% static 'js/plugins/jquery.barrating.min.js' %}"></script>
+    <!-- Counterup JS -->
+    <script src="{% static 'js/plugins/jquery.counterup.js' %}"></script>
+    <!-- Nice Select JS -->
+    <script src="{% static 'js/plugins/jquery.nice-select.js' %}"></script>
+    <!-- Sticky Sidebar JS -->
+    <script src="{% static 'js/plugins/jquery.sticky-sidebar.js' %}"></script>
+    <!-- Jquery-ui JS -->
+    <script src="{% static 'js/plugins/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'js/plugins/jquery.ui.touch-punch.min.js' %}"></script>
+    <!-- Theia Sticky Sidebar JS -->
+    <script src="{% static 'js/plugins/theia-sticky-sidebar.min.js' %}"></script>
+    <!-- Waypoints JS -->
+    <script src="{% static 'js/plugins/waypoints.min.js' %}"></script>
+    <!-- jQuery Zoom JS -->
+    <script src="{% static 'js/plugins/jquery.zoom.min.js' %}"></script>
+    <!-- Timecircles JS -->
+    <script src="{% static 'js/plugins/timecircles.js' %}"></script>
+    <!-- cart-localstorage -->
+    <script src="https://unpkg.com/cart-localstorage@1.1.4/dist/cart-localstorage.min.js" type="text/javascript"></script>
+
+
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/cart.js' %}"></script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{% extends "layouts/landing-layout.html" %}
+{% load static products %}
+
+{% block content  %}
+
+<section class="main">
+    <div style="background-image:url('static/images/background.jpg');">
+        <div class="container" style="min-height:85vh;display: flex;align-items: center;">
+          <div class="row justify-content-center w-100" style="text-align:center;">
+            <div class="col-12 col-md-8">
+              <div class="slide-content" style="display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;    background-color: rgba(0,0,0,0.4);
+                padding: 30px 20px;
+                border-radius: 30px;">
+                  <span  style="color:white;text-shadow:0 0 20px black;">{{ config.SITE_OFFER }}</span>
+                  <h1 style="color:#ffaf24;text-shadow:0 0 20px black;font-size: 64px;">{{ config.SITE_TITLE }}</h1>
+                      <p class="short-desc"  style="color:white;text-shadow:0 0 20px black;">{{ config.SITE_DESCRIPTION }}</p>
+                      <div class="slide-btn">
+                          <a class="kenne-btn" href="{% url 'product-list' %}">Купить</a>
+                      </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+    </div>
+</section>
+
+                {% comment %} <div class="slide-item bg-2 animation-style-01">
+                    <div class="slider-progress"></div>
+                    <div class="container">
+                        <div class="slide-content">
+                            <span>Exclusive Offer -10% Off This Week</span>
+                            <h2>Stylist <br> Female Clothes</h2>
+                                <p class="short-desc-2">Made from Soft, Durable, US-grown Supima cotton.</p>
+                                <div class="slide-btn">
+                                    <a class="kenne-btn" href="shop-left-sidebar.html">shop now</a>
+                                </div>
+                        </div>
+                    </div>
+                </div> {% endcomment %}
+
+
+  {% all_category_section %}
+{% endblock %}

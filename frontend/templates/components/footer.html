@@ -1,0 +1,48 @@
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 footer-contact">
+            <h3>Контакты</h3>
+            <p>
+              {% if config.CONTACT_PHONE %}
+                <strong>Телефон:</strong> {{ config.CONTACT_PHONE }}<br>
+              {% endif %}
+              {% if config.CONTACT_EMAIL %}
+                <strong>Почта:</strong> {{ config.CONTACT_EMAIL }}<br>
+              {% endif %}
+              {% if config.CONTACT_TIME %}
+                <strong>Время работы:</strong> {{ config.CONTACT_TIME }}<br>
+              {% endif %}
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Ссылки</h4>
+            <ul>
+            {% if request.path == "/" %}
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'landing' %}">Главная</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#services">Услуги</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#news">Новости</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#comments">Отзывы</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#question-answer">Вопрос-ответ</a></li>
+            {% else %}
+              <li>
+              <i class="bx bx-chevron-right"></i> <a href="{% url 'landing' %}">Главная</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'landing' %}#services">Услуги</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'news-list' %}#news">Новости</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'landing' %}#comments">Отзывы</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'landing' %}#question-answer">Вопрос-ответ</a></li>
+            {% endif %}
+            </ul>
+          </div>
+      </div>
+
+
+    </div>
+    </div>
+
+
+  </footer>
