@@ -1,0 +1,36 @@
+{% extends "layouts/page-layout.html" %}
+{% load static %}
+
+{% block content  %}
+<div class="kenne-cart-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+            <div class="table-content table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th class="kenne-product-remove">Удалить</th>
+                    <th class="cart-product-name">Наименование</th>
+                    <th class="kenne-product-price">Цена</th>
+                    <th class="kenne-product-quantity">Количество</th>
+                    <th class="kenne-product-subtotal">Сумма</th>
+                  </tr>
+                </thead>
+                  <tbody id="cart-body">
+
+                  </tbody>
+              </table>
+            </div>
+            <div class="row justify-content-center">
+                <div class="co-12 col-md-8">
+                    <div class="cart-page-total">
+                        <h2>к оплате: <span class="cart-total">0.0</span></h2>
+                    </div>
+                </div>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

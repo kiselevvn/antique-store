@@ -11,17 +11,19 @@ const noProductsSetting = {
 };
 
 
+
 document.querySelector('.minicart-wrap').addEventListener('click', (event)=>{
     Swal.fire({
       title: 'Меню корзины',
+      icon: 'info',
       showDenyButton: true,
       showCancelButton: true,
       confirmButtonText: `Перейти в корзину`,
       denyButtonText: `Очистить корзину`,
-      сancelButtonText: `Отмена`,
+      cancelButtonText: `Отмена`,
     }).then((result) => {
       if (result.isConfirmed) {
-        // Swal.fire('Saved!', '', 'success')
+        window.location.href = "/cart/";
       } else if (result.isDenied) {
         cartRemove();
         renderCartValue();
@@ -31,6 +33,9 @@ document.querySelector('.minicart-wrap').addEventListener('click', (event)=>{
 
 document.body.onload = event => {
   renderCartValue();
+
+  renderCart();
+
 }
 
 document.onclick = event => {
@@ -39,7 +44,31 @@ document.onclick = event => {
     const count = document.querySelector(".cart-plus-minus-box").value;
     addCartAction(id,count);
   };
+  if(event.target.classList.contains("remove-btn")){
+     Swal
+      .fire({
+        title: 'Удалить товар из корзины?',
+        icon: 'info',
+        showCancelButton: true,
+        confirmButtonText: `Удалить`,
+        cancelButtonText: `Отмена`,
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          const productId = parseInt(event.target.dataset.productId);
+          cartLS.remove(productId);
+          console.log(productId);
+          renderCart();
+        }
+      })
+  };
+  if(event.target.classList.contains("inc-cart-product")){
+    cartLS.quantity(event.target.dataset.productId, 1);
+    event.target.value +=1;
+  };
+  if(event.target.classList.contains("dec-cart-product")){
 
+  };
 }
 
 const addCartAction = (id, count) => {
@@ -57,7 +86,6 @@ const addCartAction = (id, count) => {
           Swal.fire(noProductsSetting);
           return;
         }
-        // cartRemove();
         cartLS.add({
           id: response.data.id,
           price: response.data.price,
@@ -73,6 +101,8 @@ const addCartAction = (id, count) => {
 
 };
 
+
+
 const cartRemove = () => {
   cartLS.destroy()
 };
@@ -85,3 +115,22 @@ const renderCartValue = () => {
     element.innerHTML = cartLS.total()
   });
 };
+
+const renderCart = event => {
+  var tableBody = "";
+  cartLS.list().forEach(product => {
+    const summ = parseFloat(product.price)*parseInt(product.quantity)
+    tableBody += "<tr>"+
+    "<td class='kenne-product-remove'><div class='remove-btn' data-product-id='"+product.id+"'><i class='fa fa-trash' title='Remove'></i></div>  </td>"+
+    "<td class='kenne-product-name'><a href='javascript:void(0)'>"+product.name+"</a></td>"+
+    "<td class='kenne-product-price'><span class='amount'>"+product.price+"</span></td>"+
+    "<td class='quantity'>"+
+        product.quantity+
+    "</td>"+
+    "<td class='product-subtotal'><span class='amount'>"+summ+"</span></td>"+
+"</tr>"
+  });
+  document.querySelector("#cart-body").innerHTML = tableBody;
+  document.querySelector(".cart-total").innerHTML = cartLS.total();
+
+}
