@@ -4,6 +4,7 @@
 		Kenne's Preloader
 ---------------------------------*/
 	$(window).on('load', function () {
+    $(".phone-mask").mask("+7(999)999-99-99");
 
 		var wind = $(window);
 		$('.loading').delay(1500).fadeOut('slow');
