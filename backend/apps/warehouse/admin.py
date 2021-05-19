@@ -22,6 +22,6 @@ class OperationAdmin(admin.ModelAdmin):
         for p in obj.positions.all():
             summ += p.count
         if summ > 0:
-            return f"Увеличилось (на {summ} едениц)"
+            return f"Увеличилось ({summ} едениц)"
         else:
-            return f"Уменьшилось (на {summ} едениц)"
+            return f"Уменьшилось ({summ} едениц)"

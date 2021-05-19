@@ -14,7 +14,9 @@ class OperationPosition(models.Model):
         related_name="positions",
     )
     product = models.ForeignKey(
-        "products.Product", verbose_name=_("Товар"), on_delete=models.PROTECT
+        "products.Product",
+        verbose_name=_("Товар"),
+        on_delete=models.PROTECT,
     )
     count = models.IntegerField(_("Количество"), default=0)
 
