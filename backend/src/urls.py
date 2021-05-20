@@ -9,6 +9,11 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     re_path(r"^ckeditor/", include("ckeditor_uploader.urls")),
     path("cart/", CartView.as_view(), name="cart"),
+    path(
+        "privacy/",
+        TemplateView.as_view(template_name="service/privacy.html"),
+        name="privacy",
+    ),
     path("products/", include("apps.products.urls")),
     path("products/api/", include("apps.products.api")),
     path("orders/api/", include("apps.orders.api")),

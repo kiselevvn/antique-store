@@ -1,6 +1,11 @@
 CONSTANCE_BACKEND = "constance.backends.database.DatabaseBackend"
 CONSTANCE_ADDITIONAL_FIELDS = {"image_field": ["django.forms.ImageField", {}]}
 CONSTANCE_CONFIG = {
+    "DOMAIN": (
+        "test.test",
+        "Домен сайта",
+        str,
+    ),
     "LOGO_TEXT": (
         "Antique-Store",
         "Текстовый логотип сайта",
@@ -36,6 +41,11 @@ CONSTANCE_CONFIG = {
         "Электронная Почта",
         str,
     ),
+    "PRIVACY_EMAIL": (
+        "example@example.com",
+        "Электронная Почта",
+        str,
+    ),
     "CONTACT_TIME": (
         "Пн - Пт, c 8:00 до 10:00",
         "Наименованиее сайта",
@@ -55,6 +65,7 @@ CONSTANCE_CONFIG_FIELDSETS = {
         "CONTACT_PHONE",
         "CONTACT_EMAIL",
         "CONTACT_TIME",
+        "DOMAIN",
     ),
 }
 
