@@ -4,7 +4,8 @@ from django.utils.translation import gettext as _
 
 class OperationPosition(models.Model):
     """
-    Позиция
+    Позиция операции движения
+    товара на складе
     """
 
     operation = models.ForeignKey(
