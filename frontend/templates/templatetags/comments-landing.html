@@ -5,13 +5,11 @@
   <div class="container" data-aos="fade-up">
     <div class="section-title" >
       <h2 data-aos="fade-up" style="color:white;">Отзывы Наших Клиентов</h2>
-      {% comment %} <p data-aos="fade-up"></p> {% endcomment %}
     </div>
     <div class="owl-carousel testimonials-carousel">
       {% for comment in objects %}
         <div class="testimonial-item">
           <h3>{{ comment.name }}</h3>
-          {% comment %} <h4>email</h4> {% endcomment %}
           <p>
             <i class="bx bxs-quote-alt-left quote-icon-left"></i>
             {{ comment.text }}

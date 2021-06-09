@@ -4,7 +4,6 @@
       <div class="container">
         <div class="section-title">
           <h2 data-aos="fade-up">Услуги</h2>
-          {% comment %} <p data-aos="fade-up"></p> {% endcomment %}
         </div>
         <div class="row">
           {% for service in objects %}
@@ -17,7 +16,6 @@
                 <div class="card-body">
                   <h5 class="card-title"><a href="">{{ service.title }}</a></h5>
                   <p class="card-text">{{ service.description }}</p>
-                  {% comment %} <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Подробнее</a></div> {% endcomment %}
                 </div>
               </div>
             </div>
