@@ -8,7 +8,8 @@ from apps.services.models import (
 
 class Operation(DateUpdatedMixin, DateCreatedMixin, models.Model):
     """
-    Операция
+    Операция движения
+    товара на складе
     """
 
     comment = models.TextField(
