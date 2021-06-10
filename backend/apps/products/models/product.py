@@ -56,7 +56,7 @@ class Product(DateUpdatedMixin, DateCreatedMixin, models.Model):
     count = models.IntegerField(_("Количство товара"), default=0)
 
     def pictures_card(self):
-        return self.pictures.first(is_card_size=True, is_published=True)[:1]
+        return self.pictures.filter(is_card_size=True, is_published=True)[:1]
 
     ready_for_sale = ReadyForSale()
     objects = models.Manager()
