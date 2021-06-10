@@ -34,11 +34,13 @@
                 <div class="single-product">
                     <div class="product-img">
                         <a href="{% url 'product-detail' object.pk %}">
+                        {% if object.pictures_card %}
                           {% for picture in object.pictures_card %}
                             <img class="primary-img"
                               src="{{ picture.image.url }}"
                               alt="{{ object.name }}">
-                          {% empty %}
+                            {% endfor %}
+                        {% else %}
                             <img class="primary-img"
                               src="{% static 'images/product/1-1.jpg' %}"
                               alt="{{ object.name }}">
@@ -46,7 +48,7 @@
                               class="secondary-img"
                               src="{% static 'images/product/1-2.jpg' %}"
                               alt="{{ object.name }}" >
-                          {% endfor %}
+                        {% endif %}
                         </a>
                     </div>
                     <div class="product-content">
